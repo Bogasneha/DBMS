@@ -1,0 +1,25 @@
+mysql> use faculty;
+Database changed
+mysql> Delimiter //
+mysql> CREATE PROCEDURE While_Loop()
+    ->  BEGIN
+    ->  DECLARE A INT;
+    ->  DECLARE faculty_identifier Varchar(10);
+    ->  WHILE A<=10 DO
+    ->  SET faculty_identifier=CONCAT(faculty_identifier,A,',');
+    ->  SET A=A+1;
+    -> END WHILE;
+    -> SELECT faculty_identifier;
+    -> END //
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> DELIMITER ;
+mysql> call While_Loop();
++--------------------+
+| faculty_identifier |
++--------------------+
+| NULL               |
++--------------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
