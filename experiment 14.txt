@@ -1,0 +1,38 @@
+mysql> use person;
+Database changed
+mysql> desc person;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| person_id  | int(11)     | NO   | PRI | 0       |       |
+| last_name  | varchar(5)  | YES  |     | NULL    |       |
+| first_name | varchar(10) | YES  |     | NULL    |       |
+| age        | int(2)      | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+mysql> create user sneha;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> grant all on person to sneha;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> show grants for sneha;
++----------------------------------------------------------+
+| Grants for sneha@%                                       |
++----------------------------------------------------------+
+| GRANT USAGE ON *.* TO 'sneha'@'%'                        |
+| GRANT ALL PRIVILEGES ON `person`.`person` TO 'sneha'@'%' |
++----------------------------------------------------------+
+2 rows in set (0.00 sec)
+
+mysql> revoke all on person from sneha;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> show grants for sneha;
++-----------------------------------+
+| Grants for sneha@%                |
++-----------------------------------+
+| GRANT USAGE ON *.* TO 'sneha'@'%' |
++-----------------------------------+
+1 row in set (0.00 sec)
