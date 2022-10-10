@@ -1,0 +1,25 @@
+
+mysql>  create database sse;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use sse;
+Database changed
+mysql> desc JavaLab;
++---------+----------+------+-----+---------+-------+
+| Field   | Type     | Null | Key | Default | Extra |
++---------+----------+------+-----+---------+-------+
+| name    | tinytext | YES  |     | NULL    |       |
+| surname | tinytext | YES  |     | NULL    |       |
+| city    | tinytext | YES  |     | NULL    |       |
++---------+----------+------+-----+---------+-------+
+3 rows in set (0.02 sec)
+C:\Users\boga sneha>cd /
+
+C:\>cd program
+C:\program>set path=C:\Program Files\Java\jdk1.8.0_171\bin
+C:\program>javac -cp mysql-connector-java-5.1.49-bin.jar;. DBConnect.java
+C:\program>java -cp mysql-connector-java-5.1.49-bin.jar;. DBConnect
+Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
+Table created
+
+C:\program>
